@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+# SPDX-FileCopyrightText: 2026 Shunsuke Shibata <s23C1068BM@chibatech.ac.jp>
+# SPDX-License-Identifier: BSD-3-Clause
+
 import sys
 #本来は関数の前後に空行を2行あける（スライドの都合で省略）
 def tonum(s):   #def 関数の名前(引数)で関数を定義
