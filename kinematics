@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2026 Shunsuke Shibata <s23C1068BM@chibatech.ac.jp>
+# SPDX-License-Identifier: BSD-3-Clause
+
+import sys
+import math
+
+for line in sys.stdin:
+    try:
+        L1, L2, L3, L4, t2, t3, t4 = map(float, line.split())
+    except ValueError:
+        print("7 numbers are required.", file=sys.stderr)
+        sys.exit(1)
+
+    t2 = math.radians(t2)
+    t3 = math.radians(t3)
+    t4 = math.radians(t4)
+
+    x = L2*math.cos(t2) + L3*math.cos(t2+t3) + L4*math.cos(t2+t3+t4)
+    y = L2*math.sin(t2) + L3*math.sin(t2+t3) + L4*math.sin(t2+t3+t4)
+    z = L1
+    a = math.degrees(t2+t3+t4)
+
+    print(f"{x:.2f} {y:.2f} {z:.2f} {a:.2f}")
