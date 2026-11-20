@@ -9,20 +9,6 @@ ng () {
 
 res=0
 
-### NORMAL INPUT ###
-out=$(seq 5 | ./plus_stdin)
-[ "$?" = 0 ]      || ng "$LINENO"
-[ "${out}" = 15 ] || ng "$LINENO"
-
-### STRANGE INPUT ###
-out=$(echo あ | ./plus_stdin)
-[ "$?" = 1 ]      || ng "$LINENO"
-[ "${out}" = "" ] || ng "$LINENO"
-
-out=$(echo | ./plus_stdin)
-[ "$?" = 1 ]      || ng "$LINENO"
-[ "${out}" = "" ] || ng "$LINENO"
-
 ### 順運動学の正常な入力 ###
 
 # 関節角度が90度の場合
