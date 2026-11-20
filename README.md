@@ -1,6 +1,8 @@
 # robosys2026
 ロボットシステム学の課題で作成したコマンドです。
 
+![test](https://github.com/shibatashunsuke1211/robosys2026/actions/workflows/test.yml/badge.svg)
+
 ## kinematicsコマンド
 4自由度マニピュレータの順運動学解を求めるコマンドです。
 ロボットマニピュレータの授業で学んだ計算式を利用しています。
