@@ -12,6 +12,14 @@
 追加した土台の回転軸と最初の回転関節の軸は一致するものとします。
 
 ## インストール方法
+### 必要なソフトウェアのインストール
+
+```
+$ sudo apt update
+$ sudo apt install git python3
+```
+
+### コマンドのダウンロード
 
 ```
 $ git clone https://github.com/shibatashunsuke1211/robosys2026.git
@@ -105,10 +113,9 @@ $ echo 100 100 | ./kinematics
 ```
 
 ## 必要なソフトウェア
+- Git
 - Python 3
 - Bash（テストに使用）
-
-外部ライブラリのインストールは必要ありません。
 
 ## テスト環境
 - Ubuntu 24.04.5 LTS
