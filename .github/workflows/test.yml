@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Shunsuke Shibata <s23C1068BM@chibatech.ac.jp>
+# SPDX-License-Identifier: BSD-3-Clause
+
 name: test        #name: ワークフローの名前
 on: push          #on: いつこのワークフローを走らせるか
 jobs:             #走らせたい処理（ジョブ）のリスト
