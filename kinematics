@@ -7,18 +7,28 @@ import math
 
 for line in sys.stdin:
     try:
-        L1, L2, L3, L4, θ2, θ3, θ4 = map(float, line.split())
+        values = list(map(float, line.split()))
+
+        if len(values) == 7:
+            values.insert(4, 0)
+
+        L1, L2, L3, L4, θ1, θ2, θ3, θ4 = values
+
     except ValueError:
-        print("7 numbers are required.", file=sys.stderr)
+        print("7 or 8 numbers are required.", file=sys.stderr)
         sys.exit(1)
 
+    θ1 = math.radians(θ1)
     θ2 = math.radians(θ2)
     θ3 = math.radians(θ3)
     θ4 = math.radians(θ4)
 
-    x = L2*math.cos(θ2) + L3*math.cos(θ2+θ3) + L4*math.cos(θ2+θ3+θ4)
-    y = L2*math.sin(θ2) + L3*math.sin(θ2+θ3) + L4*math.sin(θ2+θ3+θ4)
+    x = L2*math.cos(θ1+θ2) + L3*math.cos(θ1+θ2+θ3) + L4*math.cos(θ1+θ2+θ3+θ4)
+    y = L2*math.sin(θ1+θ2) + L3*math.sin(θ1+θ2+θ3) + L4*math.sin(θ1+θ2+θ3+θ4)
     z = L1
-    a = math.degrees(θ2+θ3+θ4)
+    α = math.degrees(θ1+θ2+θ3+θ4)
 
-    print(f"{x:.2f} {y:.2f} {z:.2f} {a:.2f}")
+    print(f"{x:.2f} {y:.2f} {z:.2f} {α:.2f}")
+
+
+
