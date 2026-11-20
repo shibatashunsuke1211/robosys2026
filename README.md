@@ -23,7 +23,6 @@ $ sudo apt install git python3
 
 ```
 $ git clone https://github.com/shibatashunsuke1211/robosys2026.git
-$ cd robosys2026
 ```
 
 ## 使用方法
