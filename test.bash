@@ -78,6 +78,16 @@ out=$(printf "100 100 100 50 0 0 0\n100 100 100 50 90 0 0 0\n" | ./kinematics)
 
 ### 順運動学の異常な入力 ###
 
+# NaNを入力した場合
+out=$(echo 100 100 nan 50 0 0 0 | ./kinematics)
+[ "$?" = 1 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+
+# infを入力した場合
+out=$(echo 100 100 100 50 inf 0 0 | ./kinematics)
+[ "$?" = 1 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+
 # 数値と文字が混在する場合
 out=$(echo 100 100 abc 50 0 0 0 | ./kinematics)
 [ "$?" = 1 ] || ng "$LINENO"

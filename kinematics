@@ -9,6 +9,9 @@ for line in sys.stdin:
     try:
         values = list(map(float, line.split()))
 
+        if not all(math.isfinite(v) for v in values):
+            raise ValueError
+
         if len(values) == 7:
             values.insert(4, 0)
 
